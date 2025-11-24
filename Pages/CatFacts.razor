@@ -1,0 +1,30 @@
+﻿@page "/catfacts"
+@inject ApiAiBlazorLab.Services.CatFactService CatService
+
+<h3>Random Cat Fact</h3>
+
+<button class="btn btn-primary" @onclick="LoadFact">Get Cat Fact</button>
+
+@if (IsLoading)
+{
+    <p class="text-muted mt-2">Loading...</p>
+}
+else if (!string.IsNullOrEmpty(Fact))
+{
+    <div class="alert alert-info mt-3">@Fact</div>
+}
+
+@code {
+    private string Fact = "";
+    private bool IsLoading = false;
+
+    private async Task LoadFact()
+    {
+        IsLoading = true;
+        Fact = "";
+
+        Fact = await CatService.GetRandomFactAsync();
+
+        IsLoading = false;
+    }
+}

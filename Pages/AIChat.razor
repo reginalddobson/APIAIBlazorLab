@@ -1,0 +1,43 @@
+﻿@page "/aichat"
+@inject ApiAiBlazorLab.Services.OpenAIChatService OpenAI
+
+<h3>Ask OpenAI</h3>
+
+<textarea class="form-control" rows="5" @bind="Prompt"></textarea>
+
+<button class="btn btn-primary mt-2" @onclick="SendPrompt" disabled="@IsLoading">
+    @(IsLoading ? "Thinking..." : "Send")
+</button>
+
+@if (!string.IsNullOrWhiteSpace(ResponseText))
+{
+    <div class="alert alert-info mt-3">
+        @ResponseText
+    </div>
+}
+
+@code {
+    private string Prompt = "";
+    private string ResponseText = "";
+    private bool IsLoading = false;
+
+    private async Task SendPrompt()
+    {
+        if (string.IsNullOrWhiteSpace(Prompt))
+            return;
+
+        IsLoading = true;
+        ResponseText = "";
+
+        try
+        {
+            ResponseText = await OpenAI.GetCompletionAsync(Prompt);
+        }
+        catch (Exception ex)
+        {
+            ResponseText = "Something went wrong: " + ex.Message;
+        }
+
+        IsLoading = false;
+    }
+}
