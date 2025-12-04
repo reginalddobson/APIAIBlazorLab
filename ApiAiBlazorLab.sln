@@ -5,6 +5,8 @@ VisualStudioVersion = 17.14.36717.8
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApiAiBlazorLab", "ApiAiBlazorLab.csproj", "{679B76EB-9AEF-424A-A255-2698FD664D0A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApiBlazorLab.Tests", "..\ApiBlazorLab.Tests\ApiBlazorLab.Tests.csproj", "{A890673D-FB7E-4B21-BB08-96CA487845D3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{679B76EB-9AEF-424A-A255-2698FD664D0A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{679B76EB-9AEF-424A-A255-2698FD664D0A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{679B76EB-9AEF-424A-A255-2698FD664D0A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A890673D-FB7E-4B21-BB08-96CA487845D3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A890673D-FB7E-4B21-BB08-96CA487845D3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A890673D-FB7E-4B21-BB08-96CA487845D3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A890673D-FB7E-4B21-BB08-96CA487845D3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
